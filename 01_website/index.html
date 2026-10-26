@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Triple E Trading — อุปกรณ์ไฟฟ้าโรงงานและตู้คอนโทรล</title>
+<meta name="description" content="ทริปเปิ้ล อี เทรดดิ้ง จำหน่ายอุปกรณ์ไฟฟ้าโรงงานและอาคาร เบรกเกอร์ แมกเนติก รีเลย์ เซ็นเซอร์ มิเตอร์ สายไฟ YAZAKI จาก OMRON, MITSUBISHI, HITACHI, FUJI, QUBIX, SHINOHAWA และอีกกว่า 60 แบรนด์ พร้อมราคาตั้ง">
+<link rel="icon" href="images/brand/3e-logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=IBM+Plex+Sans+Thai+Looped:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="assets/js/i18n.js"></script>
+</head>
+<body>
+<main>
+  <!-- hero slideshow -->
+  <section class="slides" id="slides" aria-roledescription="carousel"></section>
+
+  <!-- featured products -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head"><p class="eyebrow" data-i18n="v7_feat_eb"></p><h2 class="h2" data-i18n="v7_feat_h"></h2></div>
+      <div class="row-wrap"><div class="prow" id="rowFeat"></div></div>
+      <div class="view-all"><a href="catalog.html" data-i18n="v7_view_all"></a></div>
+    </div>
+  </section>
+
+  <!-- product groups -->
+  <section class="sec line-top" id="categories">
+    <div class="wrap">
+      <div class="sec-head"><p class="eyebrow" data-i18n="v7_grp_eb"></p><h2 class="h2" data-i18n="v7_grp_h"></h2></div>
+      <div class="tiles" id="tiles"></div>
+    </div>
+  </section>
+
+  <!-- YAZAKI collection -->
+  <section class="sec line-top">
+    <div class="wrap">
+      <div class="sec-head"><p class="eyebrow" data-i18n="v7_yz_eb"></p><h2 class="h2" data-i18n="v7_yz_h"></h2><p class="lead" data-i18n="v7_yz_p"></p></div>
+      <div class="row-wrap"><div class="prow four" id="rowYz"></div></div>
+      <div class="view-all"><a href="catalog.html?brand=yazaki" data-i18n="v7_yz_all"></a></div>
+    </div>
+  </section>
+
+  <!-- shop by brand -->
+  <section class="sec line-top" id="brands">
+    <div class="wrap">
+      <div class="sec-head"><p class="eyebrow" data-i18n="v7_br_eb"></p><h2 class="h2" data-i18n="v7_br_h"></h2></div>
+      <div class="bgrid" id="bgrid"></div>
+      <div class="brand-grid" id="brandGrid" hidden></div>
+      <div class="brand-more"><button class="btn line" id="brandMore" type="button"></button></div>
+    </div>
+  </section>
+
+  <!-- categories on dark -->
+  <section class="sec dark">
+    <div class="wrap">
+      <div class="sec-head"><p class="eyebrow" data-i18n="v7_cat_eb"></p><h2 class="h2" data-i18n="v7_cat_h"></h2></div>
+      <div class="ctiles" id="ctiles"></div>
+    </div>
+  </section>
+
+  <!-- brand rows -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head"><p class="eyebrow" id="r1Eb"></p><h2 class="h2" id="r1H"></h2></div>
+      <div class="row-wrap"><div class="prow" id="row1"></div></div>
+      <div class="view-all"><a id="r1All" href="catalog.html" data-i18n="v7_view_all"></a></div>
+    </div>
+  </section>
+  <section class="sec line-top">
+    <div class="wrap">
+      <div class="sec-head"><p class="eyebrow" id="r2Eb"></p><h2 class="h2" id="r2H"></h2></div>
+      <div class="row-wrap"><div class="prow" id="row2"></div></div>
+      <div class="view-all"><a id="r2All" href="catalog.html" data-i18n="v7_view_all"></a></div>
+    </div>
+  </section>
+
+  <!-- quote banner -->
+  <section class="banner">
+    <div class="pic" id="bannerPic"></div>
+    <div class="txt rv"><p class="eyebrow" style="text-align:left" data-i18n="v7_bn_eb"></p><h2 data-i18n-html="v7_bn_h"></h2><p data-i18n="v7_bn_p"></p>
+      <div class="btn-row"><a class="btn" href="catalog.html" data-i18n="v7_bn_btn"></a><a class="btn line" href="quote.html" style="color:#1C1C1C;border-color:#1C1C1C" data-i18n="cta_quote"></a></div></div>
+  </section>
+
+  <!-- orange marquee band -->
+  <div class="band marq" style="--dur:40s" aria-hidden="true" id="band"></div>
+
+  <!-- our story -->
+  <section class="sec dark" id="about">
+    <div class="wrap story rv">
+      <p class="eyebrow" data-i18n="v7_story_eb"></p>
+      <h2 class="h2" id="storyH"></h2>
+      <p data-i18n="v7_story_p"></p>
+      <div class="facts" id="facts"></div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="sec" id="faq">
+    <div class="wrap">
+      <div class="sec-head"><p class="eyebrow" data-i18n="v5_faq_eb"></p><h2 class="h2" data-i18n="v5_faq_h"></h2></div>
+      <div class="faq" id="faqList"></div>
+    </div>
+  </section>
+
+  <!-- LINE / contact band -->
+  <section class="sec dark" id="contact">
+    <div class="wrap member">
+      <p class="eyebrow" data-i18n="v7_ln_eb"></p>
+      <h2 class="h2" data-i18n="v5_line_h"></h2>
+      <p data-i18n="v5_line_p"></p>
+      <div class="row">
+        <div class="lineid"><span>LINE</span><b id="lineId"></b></div>
+        <a class="btn white" id="lineBtn" href="#" target="_blank" rel="noopener" data-i18n="cta_line"></a>
+        <a class="btn orange" id="callBtn" href="#" data-i18n="v5_cta_call"></a>
+      </div>
+    </div>
+  </section>
+</main>
+<script src="data/config.js"></script>
+<script src="data/catalog.js"></script>
+<script src="data/brand-logos.js"></script>
+<script src="assets/js/common.js"></script>
+<script src="assets/js/home.js"></script>
+</body>
+</html>

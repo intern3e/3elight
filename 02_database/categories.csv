@@ -1,0 +1,32 @@
+﻿category_id,slug,name_th,name_en,group,group_th,product_count,sku_count
+1,circuit-breaker,เบรกเกอร์,Circuit Breakers,power,จ่ายไฟ & ป้องกัน,170,1301
+2,fuse,ฟิวส์ & ฐานฟิวส์,Fuses,power,จ่ายไฟ & ป้องกัน,11,60
+3,surge-protection,กันฟ้าผ่า & ไฟกระชาก,Surge Protection,power,จ่ายไฟ & ป้องกัน,5,17
+4,contactor,แมกเนติก & โอเวอร์โหลด,Contactors & Overloads,control,ควบคุม,120,929
+5,relay,รีเลย์ & ซ็อกเก็ต,Relays & Sockets,control,ควบคุม,109,688
+6,protection-relay,รีเลย์ป้องกัน,Protection Relays,control,ควบคุม,27,107
+7,timer-counter,ไทม์เมอร์ & เคาน์เตอร์,Timers & Counters,control,ควบคุม,86,500
+8,temperature-control,ควบคุมอุณหภูมิ,Temperature Control,control,ควบคุม,38,175
+9,switch-pushbutton,สวิตช์ปุ่มกด & ไพลอตแลมป์,Push Buttons & Pilot Lamps,control,ควบคุม,215,938
+10,cam-switch,แคมสวิตช์ & สวิตช์ตัดตอน,Cam & Isolator Switches,control,ควบคุม,50,240
+11,sensor,เซ็นเซอร์ & ลิมิตสวิตช์,Sensors & Limit Switches,automation,ออโตเมชัน,398,2177
+12,automation,PLC อินเวอร์เตอร์ & ออโตเมชัน,"PLC, Drives & Automation",automation,ออโตเมชัน,92,347
+13,power-supply,พาวเวอร์ซัพพลาย & หม้อแปลง,Power Supplies & Transformers,automation,ออโตเมชัน,34,281
+14,meter,มิเตอร์วัดไฟ,Panel & Energy Meters,measure,วัดและทดสอบ,99,506
+15,current-transformer,CT หม้อแปลงกระแส,Current Transformers,measure,วัดและทดสอบ,50,282
+16,measuring-instrument,เครื่องมือวัด,Test & Measuring Instruments,measure,วัดและทดสอบ,16,18
+17,signal-light,ไฟสัญญาณ ไฟหมุน & ไซเรน,Signal Lights & Sirens,control,ควบคุม,50,218
+18,terminal-connector,เทอร์มินอล & หางปลา,Terminals & Lugs,install,งานติดตั้ง & เดินสาย,175,1139
+19,cable-management,รางสายไฟ เคเบิ้ลไทร์ & แกลนด์,Cable Management,install,งานติดตั้ง & เดินสาย,84,970
+20,wire-cable,สายไฟ,Wire & Cable,install,งานติดตั้ง & เดินสาย,42,1673
+21,enclosure,ตู้ไฟ & อุปกรณ์ตู้,Enclosures & Cabinet Parts,install,งานติดตั้ง & เดินสาย,110,339
+22,busbar-insulator,บัสบาร์ & ลูกถ้วย,Busbars & Insulators,install,งานติดตั้ง & เดินสาย,23,270
+23,fan-cooling,พัดลมระบายอากาศ,Panel Fans & Cooling,install,งานติดตั้ง & เดินสาย,31,88
+24,capacitor,คาปาซิเตอร์,Capacitors & PF,power,จ่ายไฟ & ป้องกัน,3,44
+25,plug-socket,ปลั๊ก เต้ารับ & คอนเนคเตอร์,"Plugs, Sockets & Connectors",install,งานติดตั้ง & เดินสาย,76,411
+26,lighting,หลอดไฟ & โคมไฟ,Lighting,install,งานติดตั้ง & เดินสาย,27,64
+27,tools,เครื่องมือช่าง,Tools,tools,เครื่องมือ & อื่นๆ,111,265
+28,chemical-tape,สเปรย์ เคมี & เทป,Chemicals & Tapes,tools,เครื่องมือ & อื่นๆ,8,17
+29,pneumatic-hydraulic,นิวเมติกส์ & วาล์ว,Pneumatics & Valves,tools,เครื่องมือ & อื่นๆ,209,1199
+30,motor-pump,มอเตอร์ & ปั๊ม,Motors & Pumps,tools,เครื่องมือ & อื่นๆ,4,5
+31,other,อื่นๆ,Other,tools,เครื่องมือ & อื่นๆ,60,278

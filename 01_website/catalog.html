@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="icon" href="images/brand/3e-logo.svg" type="image/svg+xml">
+<title>สินค้าทั้งหมด — Triple E Trading</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=IBM+Plex+Sans+Thai+Looped:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="assets/js/i18n.js"></script>
+</head>
+<body>
+<main>
+  <section class="page-head"><div class="wrap">
+    <div class="crumbs"><a href="index.html" data-i18n="crumb_home">หน้าแรก</a><span>/</span><span id="crumb">สินค้าทั้งหมด</span></div>
+    <div class="head-logo" id="headLogo" hidden></div>
+    <h1 class="display" id="title">ALL PRODUCTS.</h1>
+    <p class="lead" id="subtitle"></p>
+  </div></section>
+
+  <div class="page-body"><div class="wrap cat-layout">
+    <aside class="filters" id="filters" aria-label="ตัวกรอง">
+      <div class="fblock"><h4><span data-i18n="f_cats">หมวดสินค้า</span> <button type="button" data-clear="cat" data-i18n="f_clear">ล้าง</button></h4><div id="fCats"></div></div>
+      <div class="fblock"><h4><span data-i18n="f_brands">แบรนด์</span> <button type="button" data-clear="brand" data-i18n="f_clear">ล้าง</button></h4>
+        <input class="fsearch" id="brandSearch" placeholder="ค้นหาแบรนด์…" data-i18n-ph="f_brand_ph"><div class="brand-scroll" id="fBrands"></div></div>
+      <div class="fblock"><h4 data-i18n="f_price">ราคา</h4>
+        <label class="fopt"><input type="checkbox" id="fPriced"> <span data-i18n="f_priced">มีราคาตั้ง</span></label>
+        <label class="fopt"><input type="checkbox" id="fImg"> <span data-i18n="f_img">มีรูปสินค้า</span></label>
+      </div>
+    </aside>
+    <div class="scrim" id="scrim"></div>
+
+    <section>
+      <div class="toolbar">
+        <button class="btn cream filter-toggle" id="openFilters" type="button">☰ <span data-i18n="filters">ตัวกรอง</span></button>
+        <label class="search-field"><span class="ico" aria-hidden="true">⌕</span>
+          <input id="q" placeholder="ค้นหาชื่อสินค้า รหัสรุ่น หรือแบรนด์…" data-i18n-ph="cat_q_ph" autocomplete="off"></label>
+        <select id="sort" aria-label="เรียงตาม">
+          <option value="rel" data-i18n="sort_rel">เรียง: แนะนำ</option>
+          <option value="pa" data-i18n="sort_pa">ราคา ต่ำ → สูง</option>
+          <option value="pd" data-i18n="sort_pd">ราคา สูง → ต่ำ</option>
+          <option value="name" data-i18n="sort_name">ชื่อ A → Z</option>
+          <option value="sku" data-i18n="sort_sku">จำนวนรุ่นมากสุด</option>
+        </select>
+      </div>
+      <div class="result-meta"><span class="count" id="count"></span><div class="chips" id="chips"></div></div>
+      <div class="subs" id="subs"></div>
+      <div class="grid" id="grid"></div>
+      <div class="load-more"><button class="btn cream" id="more" type="button" data-i18n="more">ดูเพิ่มเติม</button></div>
+    </section>
+  </div></div>
+</main>
+<script src="data/config.js"></script>
+<script src="data/catalog.js"></script>
+<script src="data/brand-logos.js"></script>
+<script src="assets/js/common.js"></script>
+<script src="assets/js/catalog.js"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="icon" href="images/brand/3e-logo.svg" type="image/svg+xml">
+<title>ใบขอราคา — Triple E Trading</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=IBM+Plex+Sans+Thai+Looped:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="assets/js/i18n.js"></script>
+</head>
+<body>
+<main>
+  <section class="page-head"><div class="wrap">
+    <div class="crumbs"><a href="index.html" data-i18n="crumb_home">หน้าแรก</a><span>/</span><span data-i18n="quote">ใบขอราคา</span></div>
+    <h1 class="display" data-i18n="quote">ใบขอราคา</h1>
+    <p class="lead" data-i18n="q_lead">รายการที่เลือกไว้ ใส่จำนวน แล้วพิมพ์ หรือคัดลอกส่งให้ฝ่ายขายทางอีเมล / LINE</p>
+  </div></section>
+  <div class="page-body"><div class="wrap">
+    <div id="qbox"></div>
+    <div class="no-print" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px">
+      <button class="btn" id="copy" type="button" data-i18n="q_copy">คัดลอกรายการ</button>
+      <button class="btn cream" id="print" type="button" data-i18n="q_print">พิมพ์ / บันทึก PDF</button>
+      <button class="btn cream" id="csv" type="button" data-i18n="q_csv">ดาวน์โหลด CSV</button>
+      <button class="btn cream" id="clear" type="button" data-i18n="q_clear">ล้างรายการ</button>
+    </div>
+  </div></div>
+</main>
+<script src="data/config.js"></script>
+<script src="data/catalog.js"></script>
+<script src="data/brand-logos.js"></script>
+<script src="assets/js/common.js"></script>
+<script>
+(function(){
+  const T = window.TK, {fmt, esc, t} = T; T.mount('quote');
+  const box = document.getElementById('qbox');
+  function draw(){
+    const list = T.qget();
+    if(!list.length){ box.innerHTML = `<div class="empty">${t('q_empty')} <br><br><a class="btn" href="catalog.html">${t('q_go')}</a></div>`; return; }
+    let total = 0, ask = 0;
+    const rows = list.map((x,i)=>{ const line = x.price!=null ? x.price*(x.qty||1) : null; if(line!=null) total+=line; else ask++;
+      return `<tr><td class="qi">${i+1}</td><td class="qp"><span style="color:var(--accent-text);font-weight:800;font-size:12px;letter-spacing:.04em">${esc(x.brand)}</span><br><a href="product.html?p=${encodeURIComponent(x.slug)}" style="text-decoration:underline;text-underline-offset:3px">${esc(x.product)}</a></td>
+      <td class="model qm">${esc(x.model)}${x.option?`<br><span class="specs">${esc(x.option)}</span>`:''}</td>
+      <td class="num qpr">${x.price!=null?fmt(x.price):t('ask')}${x.unit?`<small style="font-weight:500;color:var(--muted)"> /${esc(x.unit)}</small>`:''}</td><td class="num qq"><input type="number" min="1" value="${x.qty||1}" data-i="${i}"></td>
+      <td class="num ql">${line!=null?fmt(line):'-'}</td><td class="qd"><button class="add on no-print" data-del="${i}" title="${t('q_del')}">×</button></td></tr>`; }).join('');
+    box.innerHTML = `<div class="table-scroll" style="max-height:none"><table class="sku qtable"><thead><tr><th>#</th><th>${t('q_product')}</th><th>${t('th_model')}</th><th style="text-align:right">${t('list_price')}</th><th style="text-align:right">${t('q_qty')}</th><th style="text-align:right">${t('q_sum')}</th><th></th></tr></thead><tbody>${rows}</tbody></table></div>
+      <div class="qsum"><span style="font-weight:700">${t('q_total')}</span><span class="blob" style="--c:var(--wasabi)"><b>${fmt(total)}</b><small>฿</small></span></div>${ask?`<p class="src-note">${t('q_ask_n',{n:ask})}</p>`:''}`;
+  }
+  box.addEventListener('input', e=>{ const i=e.target.dataset.i; if(i==null) return; const l=T.qget(); l[i].qty=Math.max(1,+e.target.value||1); T.qset(l); draw(); });
+  box.addEventListener('click', e=>{ const i=e.target.dataset.del; if(i==null) return; const l=T.qget(); l.splice(i,1); T.qset(l); draw(); });
+  document.getElementById('clear').onclick=()=>{ T.qset([]); draw(); };
+  document.getElementById('print').onclick=()=>print();
+  document.getElementById('copy').onclick=()=>{ const l=T.qget(); const txt=t('q_title')+'\n'+l.map((x,i)=>`${i+1}. ${x.brand} ${x.model}${x.option?' ('+x.option+')':''} x ${x.qty||1}`).join('\n');
+    (navigator.clipboard?navigator.clipboard.writeText(txt):Promise.reject()).then(()=>T.toast(t('copied'))).catch(()=>{ T.toast(t('copy_fail')); const pre=document.getElementById('copyFallback')||Object.assign(document.createElement('textarea'),{id:'copyFallback',rows:6,style:'width:100%;margin-top:14px;border-radius:12px;padding:10px;border:1.5px solid var(--line-2);background:var(--card);color:var(--text)'}); pre.value=txt; box.after(pre); pre.select(); }); };
+  document.getElementById('csv').onclick=()=>{ const l=T.qget(); const q=s=>'"'+String(s??'').replace(/"/g,'""')+'"';
+    const csv='﻿'+['brand,product,model,option,list_price,qty'].concat(l.map(x=>[x.brand,x.product,x.model,x.option,x.price,x.qty||1].map(q).join(','))).join('\n');
+    const a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'})); a.download='triplee-quote.csv'; a.click(); };
+  draw();
+})();
+</script>
+</body>
+</html>
